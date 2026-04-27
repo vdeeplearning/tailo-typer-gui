@@ -10,6 +10,7 @@ from __future__ import annotations
 from pathlib import Path
 import re
 import tkinter as tk
+import tkinter.font as tkfont
 from tkinter import messagebox, ttk
 
 try:
@@ -22,7 +23,20 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 TONE_CHART_PATH = PROJECT_ROOT / "Basic-Tones_v2.png"
 TONE_4_8_PATTERN = re.compile(r"\b([A-Za-z]+)([48])\b")
 TONE_4_8_FINALS = ("p", "t", "k", "h")
-
+COMMON_WORDS = (
+    ("I", "gua2"),
+    ("you", "li2"),
+    ("he / she", "i1"),
+    ("they", "in1"),
+    ("we", "lan2"),
+    ("love / want", "ai3"),
+    ("eat", "tsiah8"),
+    ("drink", "lim1"),
+    ("go", "khi3"),
+    ("come", "lai5"),
+    ("good", "ho2"),
+    ("thanks", "to1-sia7"),
+)
 
 class TaiLoTyperApp(tk.Tk):
     """Simple Windows desktop GUI for converting Tai-lo tone numbers."""
@@ -33,11 +47,27 @@ class TaiLoTyperApp(tk.Tk):
         self.title("Tailo Typer GUI")
         self.minsize(1180, 700)
         self.tone_chart_image: tk.PhotoImage | None = None
+        self.text_font = self._choose_text_font()
         self.status_message = tk.StringVar(
             value="Tone 4/8 warnings will appear here after conversion."
         )
 
         self._build_layout()
+
+    def _choose_text_font(self) -> tuple[str, int]:
+        available_fonts = set(tkfont.families(self))
+
+        for font_name in (
+            "Arial",
+            "Microsoft JhengHei UI",
+            "Microsoft JhengHei",
+            "Arial Unicode MS",
+            "Segoe UI",
+        ):
+            if font_name in available_fonts:
+                return (font_name, 13)
+
+        return ("TkDefaultFont", 13)
 
     def _build_layout(self) -> None:
         self.columnconfigure(0, weight=1)
@@ -57,6 +87,7 @@ class TaiLoTyperApp(tk.Tk):
         chart_frame.columnconfigure(1, weight=1)
         self._add_tone_chart(chart_frame)
         self._add_example_panel(chart_frame)
+        self._add_vocab_panel(chart_frame)
 
         input_frame = ttk.Frame(self, padding=(16, 0, 16, 8))
         input_frame.grid(row=2, column=0, sticky="nsew")
@@ -66,7 +97,7 @@ class TaiLoTyperApp(tk.Tk):
         input_label = ttk.Label(input_frame, text="Tone-number Tai-lo")
         input_label.grid(row=0, column=0, sticky="w", pady=(0, 4))
 
-        self.input_text = tk.Text(input_frame, wrap="word", height=8, undo=True)
+        self.input_text = tk.Text(input_frame, wrap="word", height=8, undo=True, font=self.text_font)
         self.input_text.grid(row=1, column=0, sticky="nsew")
         self.input_text.focus_set()
 
@@ -103,7 +134,7 @@ class TaiLoTyperApp(tk.Tk):
         output_label = ttk.Label(output_frame, text="Tone-marked Tai-lo")
         output_label.grid(row=0, column=0, sticky="w", pady=(0, 4))
 
-        self.output_text = tk.Text(output_frame, wrap="word", height=8)
+        self.output_text = tk.Text(output_frame, wrap="word", height=8, font=self.text_font)
         self.output_text.grid(row=1, column=0, sticky="nsew")
 
         status_label = ttk.Label(
@@ -155,7 +186,7 @@ class TaiLoTyperApp(tk.Tk):
         input_value = ttk.Label(
             example_frame,
             text=example_input,
-            font=("Segoe UI", 13, "bold"),
+            font=(self.text_font[0], 13, "bold"),
         )
         input_value.grid(row=1, column=0, sticky="w", pady=(2, 12))
 
@@ -165,7 +196,7 @@ class TaiLoTyperApp(tk.Tk):
         output_value = ttk.Label(
             example_frame,
             text=example_output,
-            font=("Segoe UI", 13, "bold"),
+            font=(self.text_font[0], 13, "bold"),
         )
         output_value.grid(row=3, column=0, sticky="w", pady=(2, 12))
 
@@ -179,6 +210,35 @@ class TaiLoTyperApp(tk.Tk):
             justify="left",
         )
         warning_note.grid(row=4, column=0, sticky="w")
+
+    def _add_vocab_panel(self, parent: ttk.Frame) -> None:
+        vocab_frame = ttk.LabelFrame(parent, text="Common words", padding=12)
+        vocab_frame.grid(row=1, column=1, sticky="nw", padx=(16, 0), pady=(12, 0))
+
+        headers = ("English", "Type", "Output")
+        for column, header in enumerate(headers):
+            label = ttk.Label(vocab_frame, text=header, font=("Segoe UI", 9, "bold"))
+            label.grid(row=0, column=column, sticky="w", padx=(0, 12), pady=(0, 4))
+
+        for row, (meaning, tone_number_text) in enumerate(COMMON_WORDS, start=1):
+            output_text = convert(tone_number_text)
+            ttk.Label(vocab_frame, text=meaning).grid(
+                row=row,
+                column=0,
+                sticky="w",
+                padx=(0, 12),
+            )
+            ttk.Label(vocab_frame, text=tone_number_text).grid(
+                row=row,
+                column=1,
+                sticky="w",
+                padx=(0, 12),
+            )
+            ttk.Label(
+                vocab_frame,
+                text=output_text,
+                font=(self.text_font[0], 10),
+            ).grid(row=row, column=2, sticky="w")
 
     def convert_text(self) -> None:
         input_value = self.input_text.get("1.0", "end-1c")
@@ -248,4 +308,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
 
