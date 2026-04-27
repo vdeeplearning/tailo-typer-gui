@@ -82,7 +82,7 @@ class TaiLoTyperApp(tk.Tk):
         input_label = ttk.Label(input_frame, text="Tone-number Tai-lo")
         input_label.grid(row=0, column=0, sticky="w", pady=(0, 4))
 
-        self.input_text = tk.Text(input_frame, wrap="word", height=8, undo=True, font=self.text_font)
+        self.input_text = self._create_text_box(input_frame, undo=True)
         self.input_text.grid(row=1, column=0, sticky="nsew")
         self.input_text.focus_set()
         self.input_text.bind("<Shift-Return>", self._convert_from_shortcut)
@@ -121,7 +121,7 @@ class TaiLoTyperApp(tk.Tk):
         output_label = ttk.Label(output_frame, text="Tone-marked Tai-lo")
         output_label.grid(row=0, column=0, sticky="w", pady=(0, 4))
 
-        self.output_text = tk.Text(output_frame, wrap="word", height=8, font=self.text_font)
+        self.output_text = self._create_text_box(output_frame)
         self.output_text.grid(row=1, column=0, sticky="nsew")
 
         status_label = ttk.Label(
@@ -133,6 +133,20 @@ class TaiLoTyperApp(tk.Tk):
         )
         status_label.grid(row=2, column=0, sticky="ew", pady=(8, 0))
 
+
+    def _create_text_box(self, parent: ttk.Frame, undo: bool = False) -> tk.Text:
+        return tk.Text(
+            parent,
+            wrap="word",
+            height=8,
+            undo=undo,
+            font=self.text_font,
+            padx=8,
+            pady=6,
+            spacing1=0,
+            spacing2=0,
+            spacing3=0,
+        )
 
     def _add_tone_chart(self, parent: ttk.Frame) -> None:
         if not TONE_CHART_PATH.exists():
@@ -269,6 +283,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 
 
