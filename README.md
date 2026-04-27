@@ -153,17 +153,14 @@ If double-clicking does not work, use the PowerShell method above. The PowerShel
 
 ## How To Use The App
 
-1. Look at the tones chart and common Taiwanese vocabulary examples at the top of the window.
+1. Look at the tones chart at the top of the window.
 2. Type tone-number Tai-lo in the input box.
-3. Click **Convert**.
+3. Click **Convert (Shift+Enter)**, or press **Shift+Enter** on the keyboard.
 4. The tone-marked Tai-lo appears in the output box.
 5. Click **Copy Output** if you want to copy the converted text.
 6. Paste the copied text wherever you need it.
 7. Click **Clear** to empty the input and output boxes.
 
-## Common Vocabulary Examples
-
-The app includes a small reference list with common words such as I, they, love / want, and eat. Each row shows the English meaning, the tone-number Tai-lo to type, and the tone-marked output.
 
 ## Example Input And Output
 
@@ -387,6 +384,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+
 
 
 

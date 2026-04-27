@@ -23,20 +23,6 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 TONE_CHART_PATH = PROJECT_ROOT / "Basic-Tones_v2.png"
 TONE_4_8_PATTERN = re.compile(r"\b([A-Za-z]+)([48])\b")
 TONE_4_8_FINALS = ("p", "t", "k", "h")
-COMMON_WORDS = (
-    ("I", "gua2"),
-    ("you", "li2"),
-    ("he / she", "i1"),
-    ("they", "in1"),
-    ("we", "lan2"),
-    ("love / want", "ai3"),
-    ("eat", "tsiah8"),
-    ("drink", "lim1"),
-    ("go", "khi3"),
-    ("come", "lai5"),
-    ("good", "ho2"),
-    ("thanks", "to1-sia7"),
-)
 
 class TaiLoTyperApp(tk.Tk):
     """Simple Windows desktop GUI for converting Tai-lo tone numbers."""
@@ -87,7 +73,6 @@ class TaiLoTyperApp(tk.Tk):
         chart_frame.columnconfigure(1, weight=1)
         self._add_tone_chart(chart_frame)
         self._add_example_panel(chart_frame)
-        self._add_vocab_panel(chart_frame)
 
         input_frame = ttk.Frame(self, padding=(16, 0, 16, 8))
         input_frame.grid(row=2, column=0, sticky="nsew")
@@ -100,6 +85,8 @@ class TaiLoTyperApp(tk.Tk):
         self.input_text = tk.Text(input_frame, wrap="word", height=8, undo=True, font=self.text_font)
         self.input_text.grid(row=1, column=0, sticky="nsew")
         self.input_text.focus_set()
+        self.input_text.bind("<Shift-Return>", self._convert_from_shortcut)
+        self.input_text.bind("<Control-Return>", self._convert_from_shortcut)
 
         button_frame = ttk.Frame(self, padding=(16, 4, 16, 12))
         button_frame.grid(row=3, column=0, sticky="ew")
@@ -107,7 +94,7 @@ class TaiLoTyperApp(tk.Tk):
 
         convert_button = ttk.Button(
             button_frame,
-            text="Convert",
+            text="Convert (Shift+Enter)",
             command=self.convert_text,
         )
         convert_button.grid(row=0, column=0, sticky="w", padx=(0, 8))
@@ -146,7 +133,6 @@ class TaiLoTyperApp(tk.Tk):
         )
         status_label.grid(row=2, column=0, sticky="ew", pady=(8, 0))
 
-        self.bind("<Control-Return>", lambda _event: self.convert_text())
 
     def _add_tone_chart(self, parent: ttk.Frame) -> None:
         if not TONE_CHART_PATH.exists():
@@ -211,34 +197,9 @@ class TaiLoTyperApp(tk.Tk):
         )
         warning_note.grid(row=4, column=0, sticky="w")
 
-    def _add_vocab_panel(self, parent: ttk.Frame) -> None:
-        vocab_frame = ttk.LabelFrame(parent, text="Common words", padding=12)
-        vocab_frame.grid(row=1, column=1, sticky="nw", padx=(16, 0), pady=(12, 0))
-
-        headers = ("English", "Type", "Output")
-        for column, header in enumerate(headers):
-            label = ttk.Label(vocab_frame, text=header, font=("Segoe UI", 9, "bold"))
-            label.grid(row=0, column=column, sticky="w", padx=(0, 12), pady=(0, 4))
-
-        for row, (meaning, tone_number_text) in enumerate(COMMON_WORDS, start=1):
-            output_text = convert(tone_number_text)
-            ttk.Label(vocab_frame, text=meaning).grid(
-                row=row,
-                column=0,
-                sticky="w",
-                padx=(0, 12),
-            )
-            ttk.Label(vocab_frame, text=tone_number_text).grid(
-                row=row,
-                column=1,
-                sticky="w",
-                padx=(0, 12),
-            )
-            ttk.Label(
-                vocab_frame,
-                text=output_text,
-                font=(self.text_font[0], 10),
-            ).grid(row=row, column=2, sticky="w")
+    def _convert_from_shortcut(self, _event: tk.Event) -> str:
+        self.convert_text()
+        return "break"
 
     def convert_text(self) -> None:
         input_value = self.input_text.get("1.0", "end-1c")
@@ -308,6 +269,11 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
 
 
 
