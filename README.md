@@ -23,7 +23,6 @@ Keep these files together in the same folder:
 ```text
 tailo-typer-gui
 ├── Basic-Tones_v2.png
-├── Basic-Tones_v2.webp
 ├── README.md
 └── src
     ├── __init__.py
@@ -106,13 +105,13 @@ If you see a Python version, you are ready.
 
 Put the `tailo-typer-gui` folder somewhere easy to find, such as your Desktop or Documents folder.
 
-For example, this project is currently located at:
+For example, your project folder might be located at:
 
 ```text
-C:\Users\tommy\tailo-typer-gui
+C:\Path\To\tailo-typer-gui
 ```
 
-If your folder is somewhere else, use your actual folder location in the commands below.
+Use the actual folder location on your own computer in the commands below.
 
 ## Step 4: Run the App From PowerShell
 
@@ -120,7 +119,7 @@ If your folder is somewhere else, use your actual folder location in the command
 2. Go to the app folder by typing:
 
 ```powershell
-cd C:\Users\tommy\tailo-typer-gui
+cd C:\Path\To\tailo-typer-gui
 ```
 
 3. Run the app:
@@ -240,14 +239,14 @@ After clearing, you can type a new example.
 Use PowerShell instead:
 
 ```powershell
-cd C:\Users\tommy\tailo-typer-gui
+cd C:\Path\To\tailo-typer-gui
 py src\gui_app.py
 ```
 
 If that does not work, try:
 
 ```powershell
-cd C:\Users\tommy\tailo-typer-gui
+cd C:\Path\To\tailo-typer-gui
 python src\gui_app.py
 ```
 
@@ -358,3 +357,5 @@ This should print:
 ```text
 tá sī
 ```
+
+
