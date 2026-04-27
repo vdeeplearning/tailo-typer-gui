@@ -24,9 +24,11 @@ Keep these files together in the same folder:
 
 ```text
 tailo-typer-gui
-├── Basic-Tones_v2.png
 ├── README.md
 ├── Screenshot-v3.png
+├── Taiwanese_Tones_Graphic.pdf
+├── Taiwanese_Tones_Graphic.png
+├── Taiwanese_Tones_Graphic_gui.png
 └── src
     ├── __init__.py
     ├── gui_app.py
@@ -37,7 +39,9 @@ The most important files are:
 
 - `src\gui_app.py`: the Windows desktop app.
 - `src\tailo_converter.py`: the conversion engine.
-- `Basic-Tones_v2.png`: the tones chart shown in the app.
+- `Taiwanese_Tones_Graphic.pdf`: the source PDF for the tones graphic shown in the app.
+- `Taiwanese_Tones_Graphic.png`: the full-size rendered tones graphic image.
+- `Taiwanese_Tones_Graphic_gui.png`: the resized tones graphic image shown in the app.
 - `README.md`: these instructions.
 
 Do not move `gui_app.py` away from the `src` folder unless you know how to update the file paths.
@@ -280,10 +284,11 @@ If `python` is also not recognized, install Python from the official website:
 Make sure this file is still in the main project folder:
 
 ```text
-Basic-Tones_v2.png
+Taiwanese_Tones_Graphic.png
+Taiwanese_Tones_Graphic_gui.png
 ```
 
-The app expects the image to be next to `README.md`, not inside the `src` folder.
+The app expects `Taiwanese_Tones_Graphic_gui.png` to be next to `README.md`, not inside the `src` folder.
 
 ### The App Opens But Conversion Looks Wrong
 
@@ -333,7 +338,8 @@ That means your friends can see the Python files before running them.
 To share it, send the whole `tailo-typer-gui` folder, including:
 
 ```text
-Basic-Tones_v2.png
+Taiwanese_Tones_Graphic.png
+Taiwanese_Tones_Graphic_gui.png
 README.md
 src\gui_app.py
 src\tailo_converter.py
@@ -387,6 +393,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
 
 
 

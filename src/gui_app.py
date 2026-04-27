@@ -20,7 +20,7 @@ except ImportError:
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-TONE_CHART_PATH = PROJECT_ROOT / "Basic-Tones_v2.png"
+TONE_CHART_PATH = PROJECT_ROOT / "Taiwanese_Tones_Graphic_gui.png"
 TONE_4_8_PATTERN = re.compile(r"\b([A-Za-z]+)([48])\b")
 TONE_4_8_FINALS = ("p", "t", "k", "h")
 
@@ -31,7 +31,7 @@ class TaiLoTyperApp(tk.Tk):
         super().__init__()
 
         self.title("Tailo Typer GUI")
-        self.minsize(1180, 700)
+        self.minsize(1180, 740)
         self.tone_chart_image: tk.PhotoImage | None = None
         self.text_font = self._choose_text_font()
         self.status_message = tk.StringVar(
@@ -51,9 +51,9 @@ class TaiLoTyperApp(tk.Tk):
             "Segoe UI",
         ):
             if font_name in available_fonts:
-                return (font_name, 13)
+                return (font_name, 20)
 
-        return ("TkDefaultFont", 13)
+        return ("TkDefaultFont", 20)
 
     def _build_layout(self) -> None:
         self.columnconfigure(0, weight=1)
@@ -157,7 +157,7 @@ class TaiLoTyperApp(tk.Tk):
 
     def _add_tone_chart(self, parent: ttk.Frame) -> None:
         if not TONE_CHART_PATH.exists():
-            ttk.Label(parent, text="Basic tones chart image not found.").grid(
+            ttk.Label(parent, text="Taiwanese tones graphic image not found.").grid(
                 row=0,
                 column=0,
                 sticky="w",
@@ -167,7 +167,7 @@ class TaiLoTyperApp(tk.Tk):
         try:
             source_image = tk.PhotoImage(file=str(TONE_CHART_PATH))
         except tk.TclError:
-            ttk.Label(parent, text="Basic tones chart could not be loaded.").grid(
+            ttk.Label(parent, text="Taiwanese tones graphic could not be loaded.").grid(
                 row=0,
                 column=0,
                 sticky="w",
@@ -307,4 +307,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
 
