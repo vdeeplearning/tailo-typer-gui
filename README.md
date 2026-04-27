@@ -1,6 +1,6 @@
 ﻿# Tailo Typer GUI
 
-![Tailo Typer GUI screenshot](Screenshot.png)
+![Tailo Typer GUI screenshot](Screenshot-v2.png)
 
 Tailo Typer GUI is a small Windows desktop app for converting Taiwanese Hokkien Tai-lo written with tone numbers into tone-marked Tai-lo.
 
@@ -26,7 +26,7 @@ Keep these files together in the same folder:
 tailo-typer-gui
 ├── Basic-Tones_v2.png
 ├── README.md
-├── Screenshot.png
+├── Screenshot-v2.png
 └── src
     ├── __init__.py
     ├── gui_app.py
@@ -384,6 +384,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 
 
 
