@@ -85,33 +85,40 @@ class TaiLoTyperApp(tk.Tk):
         self.input_text = self._create_text_box(input_frame, undo=True)
         self.input_text.grid(row=1, column=0, sticky="nsew")
         self.input_text.focus_set()
-        self.input_text.bind("<Shift-Return>", self._convert_from_shortcut)
+        self.input_text.bind("<Shift-Return>", self._convert_and_copy_from_shortcut)
         self.input_text.bind("<Control-Return>", self._convert_from_shortcut)
 
         button_frame = ttk.Frame(self, padding=(16, 4, 16, 12))
         button_frame.grid(row=3, column=0, sticky="ew")
-        button_frame.columnconfigure(3, weight=1)
+        button_frame.columnconfigure(4, weight=1)
 
         convert_button = ttk.Button(
             button_frame,
-            text="Convert (Shift+Enter)",
+            text="Convert (Ctrl+Enter)",
             command=self.convert_text,
         )
         convert_button.grid(row=0, column=0, sticky="w", padx=(0, 8))
+
+        convert_copy_button = ttk.Button(
+            button_frame,
+            text="Convert and Copy to Clipboard (Shift+Enter)",
+            command=self.convert_and_copy_text,
+        )
+        convert_copy_button.grid(row=0, column=1, sticky="w", padx=(0, 8))
 
         copy_button = ttk.Button(
             button_frame,
             text="Copy Output",
             command=self.copy_output,
         )
-        copy_button.grid(row=0, column=1, sticky="w", padx=(0, 8))
+        copy_button.grid(row=0, column=2, sticky="w", padx=(0, 8))
 
         clear_button = ttk.Button(
             button_frame,
             text="Clear",
             command=self.clear_text,
         )
-        clear_button.grid(row=0, column=2, sticky="w")
+        clear_button.grid(row=0, column=3, sticky="w")
 
         output_frame = ttk.Frame(self, padding=(16, 0, 16, 16))
         output_frame.grid(row=5, column=0, sticky="nsew")
@@ -215,6 +222,11 @@ class TaiLoTyperApp(tk.Tk):
         self.convert_text()
         return "break"
 
+
+    def _convert_and_copy_from_shortcut(self, _event: tk.Event) -> str:
+        self.convert_and_copy_text()
+        return "break"
+
     def convert_text(self) -> None:
         input_value = self.input_text.get("1.0", "end-1c")
         converted_value = convert(input_value)
@@ -255,6 +267,16 @@ class TaiLoTyperApp(tk.Tk):
 
         return warnings
 
+    def convert_and_copy_text(self) -> None:
+        self.convert_text()
+        output_value = self.output_text.get("1.0", "end-1c")
+
+        if not output_value:
+            messagebox.showinfo("Tailo Typer GUI", "There is no output to copy yet.")
+            return
+
+        self._copy_to_clipboard(output_value)
+
     def copy_output(self) -> None:
         output_value = self.output_text.get("1.0", "end-1c")
 
@@ -262,10 +284,12 @@ class TaiLoTyperApp(tk.Tk):
             messagebox.showinfo("Tailo Typer GUI", "There is no output to copy yet.")
             return
 
+        self._copy_to_clipboard(output_value)
+
+    def _copy_to_clipboard(self, text: str) -> None:
         self.clipboard_clear()
-        self.clipboard_append(output_value)
+        self.clipboard_append(text)
         self.update()
-        messagebox.showinfo("Tailo Typer GUI", "Output copied to the clipboard.")
 
     def clear_text(self) -> None:
         self.input_text.delete("1.0", "end")
@@ -283,6 +307,12 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
 
 
 

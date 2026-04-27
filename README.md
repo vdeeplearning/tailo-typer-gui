@@ -155,11 +155,12 @@ If double-clicking does not work, use the PowerShell method above. The PowerShel
 
 1. Look at the tones chart at the top of the window.
 2. Type tone-number Tai-lo in the input box.
-3. Click **Convert (Shift+Enter)**, or press **Shift+Enter** on the keyboard.
-4. The tone-marked Tai-lo appears in the output box.
-5. Click **Copy Output** if you want to copy the converted text.
-6. Paste the copied text wherever you need it.
-7. Click **Clear** to empty the input and output boxes.
+3. Click **Convert (Ctrl+Enter)**, or press **Ctrl+Enter**, if you only want to show the tone-marked Tai-lo in the output box.
+4. Click **Convert and Copy to Clipboard (Shift+Enter)**, or press **Shift+Enter**, if you want to convert the input and copy the output in one step.
+5. The tone-marked Tai-lo appears in the output box.
+6. Click **Copy Output** if the output is already converted and you want to copy it again.
+7. Paste the copied text wherever you need it.
+8. Click **Clear** to empty the input and output boxes.
 
 
 ## Example Input And Output
@@ -218,9 +219,11 @@ ta4 a8
 
 The app will still convert the text, but the warning area below the output box will say that those syllables use tone 4 or tone 8 without ending in `p`, `t`, `k`, or `h`.
 
-## Copy Output Button
+## Clipboard Buttons
 
-The **Copy Output** button copies the converted text to your Windows clipboard.
+The **Convert and Copy to Clipboard (Shift+Enter)** button converts the input text and copies the converted output to your Windows clipboard in one step.
+
+The **Copy Output** button copies the text that is already visible in the output box to your Windows clipboard.
 
 That means it replaces whatever you previously copied.
 
@@ -319,7 +322,7 @@ It does not:
 
 It only converts text typed into the app window.
 
-The **Copy Output** button writes the converted output to your clipboard when you click it.
+The clipboard buttons write converted output to your clipboard only when you click them. They do not open a confirmation pop-up.
 
 ## Sharing With Friends
 
@@ -384,6 +387,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+
+
 
 
 
