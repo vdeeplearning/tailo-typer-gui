@@ -35,7 +35,7 @@ class TaiLoTyperApp(tk.Tk):
         self.tone_chart_image: tk.PhotoImage | None = None
         self.text_font = self._choose_text_font()
         self.status_message = tk.StringVar(
-            value="Tone 4/8 warnings will appear here after conversion."
+            value="Tone 4 or tone 8 warnings will appear here after conversion."
         )
 
         self._build_layout()
@@ -239,10 +239,10 @@ class TaiLoTyperApp(tk.Tk):
         warnings = self._find_tone_4_8_warnings(input_value)
 
         if not warnings:
-            self.status_message.set("No tone 4/8 warnings.")
+            self.status_message.set("No tone 4 or tone 8 warnings.")
             return
 
-        warning_text = "Tone 4/8 check: " + "; ".join(warnings)
+        warning_text = "Tone 4 or tone 8 check: " + "; ".join(warnings)
         self.status_message.set(warning_text)
 
     def _find_tone_4_8_warnings(self, input_value: str) -> list[str]:
@@ -295,7 +295,7 @@ class TaiLoTyperApp(tk.Tk):
         self.input_text.delete("1.0", "end")
         self.output_text.delete("1.0", "end")
         self.status_message.set(
-            "Tone 4/8 warnings will appear here after conversion."
+            "Tone 4 or tone 8 warnings will appear here after conversion."
         )
         self.input_text.focus_set()
 
@@ -307,18 +307,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
