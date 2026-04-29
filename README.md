@@ -51,13 +51,11 @@ You do not need a GitHub account to download the ZIP file.
 Before the detailed instructions, here is the basic idea:
 
 1. Download the project from GitHub as a ZIP file.
-2. Extract or unzip the ZIP file.
-3. Open the unzipped app folder.
-4. Check whether Python is installed.
-5. If Python is not installed, install Python.
-6. Open PowerShell on Windows or Terminal on Mac.
-7. Use `cd` to point PowerShell or Terminal to the unzipped app folder.
-8. Run the app with Python.
+2. Extract or unzip the ZIP file, then open the unzipped app folder.
+3. Check whether Python is installed.
+4. If Python is not installed, install Python.
+5. Open PowerShell on Windows or Terminal on Mac, point it to the unzipped app folder with `cd`, and run the app with Python.
+6. Optional: try opening the app by double-clicking `src/gui_app.py`.
 
 The detailed Windows and Mac instructions below walk through each of these steps slowly.
 
@@ -99,7 +97,49 @@ Use Python 3.10 or newer. Python 3.11 or 3.12 is also fine.
 
 You do not need to install any extra Python packages.
 
-## Windows Step 1: Check Whether Python Is Already Installed
+## Windows Step 1: Download The ZIP From GitHub
+
+If you have not downloaded the app yet, follow the **How To Download This App From GitHub** section above.
+
+You should end up with a ZIP file named something like:
+
+```text
+tailo-typer-gui-main.zip
+```
+
+## Windows Step 2: Open The Unzipped App Folder
+
+If you downloaded the app from GitHub as a ZIP file, you must unzip it first.
+
+1. Find the downloaded ZIP file. It is usually in your **Downloads** folder.
+2. Right-click the ZIP file.
+3. Click **Extract All**.
+4. Choose a place that is easy to find, such as your Desktop or Documents folder.
+5. After extraction, open the unzipped folder.
+
+The unzipped folder is your app folder. It may be named something like:
+
+```text
+tailo-typer-gui-main
+```
+
+This unzipped app folder is also the folder you will point PowerShell to in a later step. In programming instructions, this is often called the working directory.
+
+For example, if you unzipped the folder onto your Desktop, your app folder might be located at:
+
+```text
+C:\Users\YourName\Desktop\tailo-typer-gui-main
+```
+
+If you renamed the folder to `tailo-typer-gui`, it might be located at:
+
+```text
+C:\Users\YourName\Desktop\tailo-typer-gui
+```
+
+Use the actual unzipped folder location on your own computer in the commands below.
+
+## Windows Step 3: Check Whether Python Is Already Installed
 
 1. Click the Windows Start button.
 2. Type `PowerShell`.
@@ -128,7 +168,7 @@ If that shows a Python version, you can still run the app. Use `python` in the r
 
 If neither command works, install Python using the next section.
 
-## Windows Step 2: Install Python If Needed
+## Windows Step 4: Install Python If Needed
 
 1. Go to the official Python website:
 
@@ -153,39 +193,7 @@ py --version
 
 If you see a Python version, you are ready.
 
-## Windows Step 3: Open The Unzipped App Folder
-
-If you downloaded the app from GitHub as a ZIP file, you must unzip it first.
-
-1. Find the downloaded ZIP file. It is usually in your **Downloads** folder.
-2. Right-click the ZIP file.
-3. Click **Extract All**.
-4. Choose a place that is easy to find, such as your Desktop or Documents folder.
-5. After extraction, open the unzipped folder.
-
-The unzipped folder is your app folder. It may be named something like:
-
-```text
-tailo-typer-gui-main
-```
-
-This unzipped app folder is also the folder you will point PowerShell to in the next step. In programming instructions, this is often called the working directory.
-
-For example, if you unzipped the folder onto your Desktop, your app folder might be located at:
-
-```text
-C:\Users\YourName\Desktop\tailo-typer-gui-main
-```
-
-If you renamed the folder to `tailo-typer-gui`, it might be located at:
-
-```text
-C:\Users\YourName\Desktop\tailo-typer-gui
-```
-
-Use the actual unzipped folder location on your own computer in the commands below.
-
-## Windows Step 4: Run the App From PowerShell
+## Windows Step 5: Run The App From PowerShell
 
 1. Open PowerShell.
 2. Go to the app folder with the `cd` command.
@@ -220,7 +228,7 @@ python src\gui_app.py
 
 A window titled **Tailo Typer GUI** should open.
 
-## Windows Step 5: Run the App by Double-Clicking
+## Windows Step 6: Run The App By Double-Clicking
 
 You may also be able to run the app by double-clicking this file:
 
@@ -232,8 +240,43 @@ If double-clicking works, the Tailo Typer GUI window will open.
 
 If double-clicking does not work, use the PowerShell method above. The PowerShell method is more reliable.
 
+## Mac Step 1: Download The ZIP From GitHub
 
-## Mac Step 1: Check Whether Python Is Already Installed
+If you have not downloaded the app yet, follow the **How To Download This App From GitHub** section above.
+
+You should end up with a ZIP file named something like:
+
+```text
+tailo-typer-gui-main.zip
+```
+
+## Mac Step 2: Open The Unzipped App Folder
+
+If you downloaded the app from GitHub as a ZIP file, unzip it first.
+
+1. Find the downloaded ZIP file. It is usually in your **Downloads** folder.
+2. Double-click the ZIP file.
+3. macOS will create an unzipped folder next to the ZIP file.
+4. Move the unzipped folder somewhere easy to find, such as your Desktop or Documents folder.
+5. Open the unzipped folder.
+
+The unzipped folder is your app folder. It may be named something like:
+
+```text
+tailo-typer-gui-main
+```
+
+This unzipped app folder is also the folder you will point Terminal to in a later step. In programming instructions, this is often called the working directory.
+
+For example, if you put the folder on your Desktop, it might be located at:
+
+```text
+/Users/your-name/Desktop/tailo-typer-gui-main
+```
+
+Use the actual unzipped folder location on your own computer in the commands below.
+
+## Mac Step 3: Check Whether Python Is Already Installed
 
 1. Open **Terminal**.
 2. Type this command and press Return:
@@ -252,7 +295,7 @@ The exact version number may be different. That is okay as long as it is Python 
 
 If Terminal says `python3` was not found, install Python using the next section.
 
-## Mac Step 2: Install Python If Needed
+## Mac Step 4: Install Python If Needed
 
 1. Go to the official Python website:
 
@@ -270,28 +313,16 @@ python3 --version
 
 If you see a Python version, you are ready.
 
-## Mac Step 3: Open the App Folder
-
-Put the `tailo-typer-gui` folder somewhere easy to find, such as your Desktop or Documents folder.
-
-For example, your project folder might be located at:
-
-```text
-/Users/your-name/Desktop/tailo-typer-gui
-```
-
-Use the actual folder location on your own computer in the commands below.
-
-## Mac Step 4: Run the App From Terminal
+## Mac Step 5: Run The App From Terminal
 
 1. Open Terminal.
 2. Go to the app folder. For example:
 
 ```bash
-cd ~/Desktop/tailo-typer-gui
+cd ~/Desktop/tailo-typer-gui-main
 ```
 
-If your folder is somewhere else, drag the folder into the Terminal window after typing `cd `, then press Return.
+If your folder is somewhere else, type `cd `, drag the unzipped app folder into the Terminal window, and press Return.
 
 3. Run the app:
 
@@ -301,7 +332,7 @@ python3 src/gui_app.py
 
 A window titled **Tailo Typer GUI** should open.
 
-## Mac Step 5: Run the App by Double-Clicking
+## Mac Step 6: Run The App By Double-Clicking
 
 You may be able to run the app by double-clicking this file:
 
@@ -310,7 +341,6 @@ src/gui_app.py
 ```
 
 If double-clicking does not work, use the Terminal method above. The Terminal method is more reliable.
-
 ## How To Use The App
 
 1. Look at the tones chart at the top of the window.
