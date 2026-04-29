@@ -45,6 +45,22 @@ tailo-typer-gui-main
 
 You do not need a GitHub account to download the ZIP file.
 
+
+## General Framework Of Installation
+
+Before the detailed instructions, here is the basic idea:
+
+1. Download the project from GitHub as a ZIP file.
+2. Extract or unzip the ZIP file.
+3. Open the unzipped app folder.
+4. Check whether Python is installed.
+5. If Python is not installed, install Python.
+6. Open PowerShell on Windows or Terminal on Mac.
+7. Use `cd` to point PowerShell or Terminal to the unzipped app folder.
+8. Run the app with Python.
+
+The detailed Windows and Mac instructions below walk through each of these steps slowly.
+
 ## What Is Included
 
 Keep these files together in the same folder:
@@ -120,7 +136,7 @@ If neither command works, install Python using the next section.
 
 2. Download the latest Windows installer.
 3. Open the installer.
-4. On the first installer screen, check the box that says:
+4. **IMPORTANT:** On the first installer screen, check the box that says:
 
 ```text
 Add python.exe to PATH
