@@ -230,7 +230,7 @@ A window titled **Tailo Typer GUI** should open.
 
 ## Windows Step 6 Optional: Run The App By Double-Clicking
 
-This step is optional. You may also be able to run the app by double-clicking this file:
+This step is optional. In Windows File Explorer, you may also be able to run the app by double-clicking this file:
 
 ```text
 src\gui_app.py
@@ -334,7 +334,7 @@ A window titled **Tailo Typer GUI** should open.
 
 ## Mac Step 6 Optional: Run The App By Double-Clicking
 
-This step is optional. You may be able to run the app by double-clicking this file:
+This step is optional. In Mac Finder, you may be able to run the app by double-clicking this file:
 
 ```text
 src/gui_app.py
