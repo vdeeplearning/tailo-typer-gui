@@ -77,6 +77,8 @@ Do not move `gui_app.py` away from the `src` folder unless you know how to updat
 
 You need a Windows or Mac computer with Python installed.
 
+If Python is not already installed, do not worry. The instructions below show how to check for Python and how to install it if needed.
+
 Use Python 3.10 or newer. Python 3.11 or 3.12 is also fine.
 
 You do not need to install any extra Python packages.
