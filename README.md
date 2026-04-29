@@ -135,38 +135,58 @@ py --version
 
 If you see a Python version, you are ready.
 
-## Windows Step 3: Open the App Folder
+## Windows Step 3: Open The Unzipped App Folder
 
-Put the `tailo-typer-gui` folder somewhere easy to find, such as your Desktop or Documents folder.
+If you downloaded the app from GitHub as a ZIP file, you must unzip it first.
 
-For example, your project folder might be located at:
+1. Find the downloaded ZIP file. It is usually in your **Downloads** folder.
+2. Right-click the ZIP file.
+3. Click **Extract All**.
+4. Choose a place that is easy to find, such as your Desktop or Documents folder.
+5. After extraction, open the unzipped folder.
+
+The unzipped folder is your app folder. It may be named something like:
 
 ```text
-C:\Path\To\tailo-typer-gui
+tailo-typer-gui-main
 ```
 
-Use the actual folder location on your own computer in the commands below.
+This unzipped app folder is also the folder you will point PowerShell to in the next step. In programming instructions, this is often called the working directory.
+
+For example, if you unzipped the folder onto your Desktop, your app folder might be located at:
+
+```text
+C:\Users\YourName\Desktop\tailo-typer-gui-main
+```
+
+If you renamed the folder to `tailo-typer-gui`, it might be located at:
+
+```text
+C:\Users\YourName\Desktop\tailo-typer-gui
+```
+
+Use the actual unzipped folder location on your own computer in the commands below.
 
 ## Windows Step 4: Run the App From PowerShell
 
 1. Open PowerShell.
 2. Go to the app folder with the `cd` command.
 
-The example below uses `C:\Path\To\tailo-typer-gui` as a placeholder. Replace it with the real location where you saved the `tailo-typer-gui` folder.
+The example below uses `C:\Path\To\tailo-typer-gui` as a placeholder. Replace it with the real location of your unzipped app folder.
 
-For example, if you put the folder on your Desktop, the command might look like this:
+For example, if your unzipped folder is on your Desktop, the command might look like this:
 
 ```powershell
 cd C:\Users\YourName\Desktop\tailo-typer-gui
 ```
 
-If you put the folder in Documents, the command might look like this:
+If your unzipped folder is in Documents, the command might look like this:
 
 ```powershell
 cd C:\Users\YourName\Documents\tailo-typer-gui
 ```
 
-Use your own Windows username and folder location.
+Use your own Windows username and the actual unzipped folder name.
 
 3. Run the app:
 
