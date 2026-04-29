@@ -18,6 +18,33 @@ tá sī
 
 The app runs locally on your computer. It does not use the internet, does not use global hotkeys, and does not require AutoHotkey.
 
+
+## How To Download This App From GitHub
+
+If you are viewing this project on GitHub and are not familiar with GitHub, follow these steps:
+
+1. Look near the top-right area of the file list for a green button labeled **Code**.
+2. Click the **Code** button.
+3. In the menu that opens, click **Download ZIP**.
+4. Your browser will download a file named something like:
+
+```text
+tailo-typer-gui-main.zip
+```
+
+5. Find the downloaded ZIP file. It is usually in your **Downloads** folder.
+6. Right-click the ZIP file and choose **Extract All** on Windows, or double-click it on Mac.
+7. Open the extracted folder.
+8. You should see a folder named something like:
+
+```text
+tailo-typer-gui-main
+```
+
+9. That extracted folder is the app folder. Use that folder when following the run instructions below.
+
+You do not need a GitHub account to download the ZIP file.
+
 ## What Is Included
 
 Keep these files together in the same folder:
