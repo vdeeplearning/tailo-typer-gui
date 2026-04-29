@@ -230,15 +230,21 @@ A window titled **Tailo Typer GUI** should open.
 
 ## Windows Step 6 Optional: Run The App By Double-Clicking
 
-This step is optional. In Windows File Explorer, you may also be able to run the app by double-clicking this file:
+This step is optional. In Windows File Explorer, you may also be able to run the app by opening this file:
 
 ```text
 src\gui_app.py
 ```
 
-If double-clicking works, the Tailo Typer GUI window will open.
+Depending on your Windows setup, double-clicking may work by itself. If it does not, try this:
 
-If double-clicking does not work, use the PowerShell method above. The PowerShell method is more reliable.
+1. Right-click `src\gui_app.py` in File Explorer.
+2. Choose **Open with**.
+3. Choose **Python** or **Python Launcher** if it appears.
+
+If the app opens, the Tailo Typer GUI window will appear.
+
+If this does not work, use the PowerShell method above. The PowerShell method is more reliable.
 
 ## Mac Step 1: Download The ZIP From GitHub
 
@@ -334,13 +340,22 @@ A window titled **Tailo Typer GUI** should open.
 
 ## Mac Step 6 Optional: Run The App By Double-Clicking
 
-This step is optional. In Mac Finder, you may be able to run the app by double-clicking this file:
+This step is optional. In Mac Finder, you may also be able to run the app by opening this file:
 
 ```text
 src/gui_app.py
 ```
 
-If double-clicking does not work, use the Terminal method above. The Terminal method is more reliable.
+Depending on your Mac setup, double-clicking may work by itself. If it does not, try this:
+
+1. Control-click or right-click `src/gui_app.py` in Finder.
+2. Choose **Open With**.
+3. Choose **Python Launcher** if it appears.
+
+If the app opens, the Tailo Typer GUI window will appear.
+
+If this does not work, use the Terminal method above. The Terminal method is more reliable.
+
 ## How To Use The App
 
 1. Look at the tones chart at the top of the window.
