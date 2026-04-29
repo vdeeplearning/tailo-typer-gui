@@ -55,7 +55,7 @@ Before the detailed instructions, here is the basic idea:
 3. Check whether Python is installed.
 4. If Python is not installed, install Python.
 5. Open PowerShell on Windows or Terminal on Mac, point it to the unzipped app folder with `cd`, and run the app with Python.
-6. Optional: try opening the app by double-clicking `src/gui_app.py`.
+6. Optional: try opening the app by double-clicking `src/gui_app.py`. Step 6 is not required.
 
 The detailed Windows and Mac instructions below walk through each of these steps slowly.
 
@@ -228,9 +228,9 @@ python src\gui_app.py
 
 A window titled **Tailo Typer GUI** should open.
 
-## Windows Step 6: Run The App By Double-Clicking
+## Windows Step 6 Optional: Run The App By Double-Clicking
 
-You may also be able to run the app by double-clicking this file:
+This step is optional. You may also be able to run the app by double-clicking this file:
 
 ```text
 src\gui_app.py
@@ -332,9 +332,9 @@ python3 src/gui_app.py
 
 A window titled **Tailo Typer GUI** should open.
 
-## Mac Step 6: Run The App By Double-Clicking
+## Mac Step 6 Optional: Run The App By Double-Clicking
 
-You may be able to run the app by double-clicking this file:
+This step is optional. You may be able to run the app by double-clicking this file:
 
 ```text
 src/gui_app.py
