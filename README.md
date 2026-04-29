@@ -2,7 +2,7 @@
 
 ![Tailo Typer GUI screenshot](Screenshot-v3.png)
 
-Tailo Typer GUI is a small Windows desktop app for converting Taiwanese Hokkien Tai-lo written with tone numbers into tone-marked Tai-lo.
+Tailo Typer GUI is a small desktop app for converting Taiwanese Hokkien Tai-lo written with tone numbers into tone-marked Tai-lo.
 
 For example, you can type:
 
@@ -37,7 +37,7 @@ tailo-typer-gui
 
 The most important files are:
 
-- `src\gui_app.py`: the Windows desktop app.
+- `src\gui_app.py`: the desktop app.
 - `src\tailo_converter.py`: the conversion engine.
 - `Taiwanese_Tones_Graphic.pdf`: the source PDF for the tones graphic shown in the app.
 - `Taiwanese_Tones_Graphic.png`: the full-size rendered tones graphic image.
@@ -48,13 +48,13 @@ Do not move `gui_app.py` away from the `src` folder unless you know how to updat
 
 ## What You Need Before Running It
 
-You need a Windows computer with Python installed.
+You need a Windows or Mac computer with Python installed.
 
 Use Python 3.10 or newer. Python 3.11 or 3.12 is also fine.
 
 You do not need to install any extra Python packages.
 
-## Step 1: Check Whether Python Is Already Installed
+## Windows Step 1: Check Whether Python Is Already Installed
 
 1. Click the Windows Start button.
 2. Type `PowerShell`.
@@ -83,7 +83,7 @@ If that shows a Python version, you can still run the app. Use `python` in the r
 
 If neither command works, install Python using the next section.
 
-## Step 2: Install Python If Needed
+## Windows Step 2: Install Python If Needed
 
 1. Go to the official Python website:
 
@@ -108,7 +108,7 @@ py --version
 
 If you see a Python version, you are ready.
 
-## Step 3: Open the App Folder
+## Windows Step 3: Open the App Folder
 
 Put the `tailo-typer-gui` folder somewhere easy to find, such as your Desktop or Documents folder.
 
@@ -120,14 +120,26 @@ C:\Path\To\tailo-typer-gui
 
 Use the actual folder location on your own computer in the commands below.
 
-## Step 4: Run the App From PowerShell
+## Windows Step 4: Run the App From PowerShell
 
 1. Open PowerShell.
-2. Go to the app folder by typing:
+2. Go to the app folder with the `cd` command.
+
+The example below uses `C:\Path\To\tailo-typer-gui` as a placeholder. Replace it with the real location where you saved the `tailo-typer-gui` folder.
+
+For example, if you put the folder on your Desktop, the command might look like this:
 
 ```powershell
-cd C:\Path\To\tailo-typer-gui
+cd C:\Users\YourName\Desktop\tailo-typer-gui
 ```
+
+If you put the folder in Documents, the command might look like this:
+
+```powershell
+cd C:\Users\YourName\Documents\tailo-typer-gui
+```
+
+Use your own Windows username and folder location.
 
 3. Run the app:
 
@@ -143,7 +155,7 @@ python src\gui_app.py
 
 A window titled **Tailo Typer GUI** should open.
 
-## Step 5: Run the App by Double-Clicking
+## Windows Step 5: Run the App by Double-Clicking
 
 You may also be able to run the app by double-clicking this file:
 
@@ -154,6 +166,85 @@ src\gui_app.py
 If double-clicking works, the Tailo Typer GUI window will open.
 
 If double-clicking does not work, use the PowerShell method above. The PowerShell method is more reliable.
+
+
+## Mac Step 1: Check Whether Python Is Already Installed
+
+1. Open **Terminal**.
+2. Type this command and press Return:
+
+```bash
+python3 --version
+```
+
+If Python is installed, you should see something like:
+
+```text
+Python 3.12.3
+```
+
+The exact version number may be different. That is okay as long as it is Python 3.10 or newer.
+
+If Terminal says `python3` was not found, install Python using the next section.
+
+## Mac Step 2: Install Python If Needed
+
+1. Go to the official Python website:
+
+   <https://www.python.org/downloads/macos/>
+
+2. Download the latest macOS installer.
+3. Open the downloaded `.pkg` file.
+4. Follow the installer steps.
+5. Close and reopen Terminal.
+6. Check the install by running:
+
+```bash
+python3 --version
+```
+
+If you see a Python version, you are ready.
+
+## Mac Step 3: Open the App Folder
+
+Put the `tailo-typer-gui` folder somewhere easy to find, such as your Desktop or Documents folder.
+
+For example, your project folder might be located at:
+
+```text
+/Users/your-name/Desktop/tailo-typer-gui
+```
+
+Use the actual folder location on your own computer in the commands below.
+
+## Mac Step 4: Run the App From Terminal
+
+1. Open Terminal.
+2. Go to the app folder. For example:
+
+```bash
+cd ~/Desktop/tailo-typer-gui
+```
+
+If your folder is somewhere else, drag the folder into the Terminal window after typing `cd `, then press Return.
+
+3. Run the app:
+
+```bash
+python3 src/gui_app.py
+```
+
+A window titled **Tailo Typer GUI** should open.
+
+## Mac Step 5: Run the App by Double-Clicking
+
+You may be able to run the app by double-clicking this file:
+
+```text
+src/gui_app.py
+```
+
+If double-clicking does not work, use the Terminal method above. The Terminal method is more reliable.
 
 ## How To Use The App
 
@@ -225,9 +316,9 @@ The app will still convert the text, but the warning area below the output box w
 
 ## Clipboard Buttons
 
-The **Convert and Copy to Clipboard (Shift+Enter)** button converts the input text and copies the converted output to your Windows clipboard in one step.
+The **Convert and Copy to Clipboard (Shift+Enter)** button converts the input text and copies the converted output to your clipboard in one step.
 
-The **Copy Output** button copies the text that is already visible in the output box to your Windows clipboard.
+The **Copy Output** button copies the text that is already visible in the output box to your clipboard.
 
 That means it replaces whatever you previously copied.
 
@@ -278,6 +369,34 @@ python src\gui_app.py
 If `python` is also not recognized, install Python from the official website:
 
 <https://www.python.org/downloads/windows/>
+
+
+### Mac: Terminal Says `python3` Is Not Found
+
+Install Python from the official macOS download page:
+
+<https://www.python.org/downloads/macos/>
+
+Then close and reopen Terminal and run:
+
+```bash
+python3 --version
+```
+
+### Mac: The App Does Not Open When I Double-Click It
+
+Use Terminal instead:
+
+```bash
+cd ~/Desktop/tailo-typer-gui
+python3 src/gui_app.py
+```
+
+If your folder is not on the Desktop, type `cd `, drag the `tailo-typer-gui` folder into Terminal, press Return, and then run:
+
+```bash
+python3 src/gui_app.py
+```
 
 ### The Tones Chart Does Not Appear
 
@@ -338,31 +457,48 @@ That means your friends can see the Python files before running them.
 To share it, send the whole `tailo-typer-gui` folder, including:
 
 ```text
+README.md
+Screenshot-v3.png
+Taiwanese_Tones_Graphic.pdf
 Taiwanese_Tones_Graphic.png
 Taiwanese_Tones_Graphic_gui.png
-README.md
 src\gui_app.py
 src\tailo_converter.py
 src\__init__.py
 ```
 
-Your friends will need Python installed. Then they can run:
+Your friends will need Python installed.
+
+On Windows, they can run:
 
 ```powershell
 cd path\to\tailo-typer-gui
 py src\gui_app.py
 ```
 
-Replace `path\to\tailo-typer-gui` with the real folder location on their computer.
+On Mac, they can run:
+
+```bash
+cd path/to/tailo-typer-gui
+python3 src/gui_app.py
+```
+
+Replace the example path with the real folder location on their computer.
 
 ## Command-Line Converter
 
 The original command-line converter is still available.
 
-From the project folder, run:
+From the project folder on Windows, run:
 
 ```powershell
 py src\tailo_converter.py ta2 si7
+```
+
+From the project folder on Mac, run:
+
+```bash
+python3 src/tailo_converter.py ta2 si7
 ```
 
 This should print:
@@ -370,6 +506,7 @@ This should print:
 ```text
 tá sī
 ```
+
 ## License
 
 This project is available under the MIT License.
@@ -393,17 +530,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
